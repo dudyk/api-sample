@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  carryload_db:
+    volumes:
+      [carryload_db:/var/lib/mysql]
+
+  carryload_api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      [carryload_api:/app/data]
+
+volumes:
+  carryload_db:
+  carryload_api:
